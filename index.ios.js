@@ -5,6 +5,7 @@
 'use strict';
 
 var React = require('react-native');
+
 var {
   AppRegistry,
   StyleSheet,
@@ -12,35 +13,25 @@ var {
   View,
 } = React;
 
-var PropertyListings = React.createClass({
-  render: function() {
+class PropertyListingsApp extends React.Component {
+  render() {
     return (
-      <View style={styles.container}>
-        <Text>
-          Tiger's Property Listings App
+      <View>
+        <Text style={styles.text}>
+          Hello World!
         </Text>
       </View>
     );
   }
-});
+}
 
 var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  text: {
+    color: 'black',
+    backgroundColor: 'white',
+    fontSize: 30,
+    margin: 80
+  }
 });
 
-AppRegistry.registerComponent('PropertyListings', () => PropertyListings);
+AppRegistry.registerComponent('PropertyListings', () => PropertyListingsApp);
