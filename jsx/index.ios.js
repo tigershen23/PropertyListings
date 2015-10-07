@@ -5,12 +5,14 @@
 'use strict';
 
 var React = require('react-native');
+var SearchPage = require('./SearchPage');
 
 var {
   AppRegistry,
   StyleSheet,
   Text,
   View,
+  NavigatorIOS,
 } = React;
 
 class HelloWorld extends React.Component {
@@ -28,11 +30,11 @@ class HelloWorld extends React.Component {
 class PropertyListingsApp extends React.Component {
   render() {
     return (
-      <React.NavigatorIOS
+      <NavigatorIOS
         style={styles.container}
         initialRoute={{
           title: 'Property Listings',
-          component: HelloWorld
+          component: SearchPage
         }} />
     );
   }
