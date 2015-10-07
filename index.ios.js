@@ -13,7 +13,7 @@ var {
   View,
 } = React;
 
-class PropertyListingsApp extends React.Component {
+class HelloWorld extends React.Component {
   render() {
     return (
       <View>
@@ -25,13 +25,30 @@ class PropertyListingsApp extends React.Component {
   }
 }
 
+class PropertyListingsApp extends React.Component {
+  render() {
+    return (
+      <React.NavigatorIOS
+        style={styles.container}
+        initialRoute={{
+          title: 'Property Listings',
+          component: HelloWorld
+        }} />
+    );
+  }
+}
+
+
 var styles = StyleSheet.create({
   text: {
     color: 'black',
     backgroundColor: 'white',
     fontSize: 30,
     margin: 80
-  }
+  },
+  container: {
+    flex: 1
+  },
 });
 
 AppRegistry.registerComponent('PropertyListings', () => PropertyListingsApp);
