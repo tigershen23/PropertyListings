@@ -13,7 +13,23 @@ var {
 } = React;
 
 class SearchPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchString: 'london'
+    };
+  }
+
+  onSearchTextChanged(e) {
+    console.log('onSearchTextChanged');
+    this.setState({
+     searchString: e.nativeEvent.text
+    });
+    console.log(this.state.searchString);
+  }
+
   render() {
+    console.log('SearchPage.render');
     return (
       <View style={styles.container}>
         <Text style={styles.description}>
@@ -25,7 +41,8 @@ class SearchPage extends Component {
         <View style={styles.flowRight}>
           <TextInput
             style={styles.searchInput}
-            placeholder='...' />
+            value={this.state.searchString}
+            onChange={this.onSearchTextChanged.bind(this)} />
           <TouchableHighlight
             style={styles.button}
             underlayColor='#99d9f4'>
