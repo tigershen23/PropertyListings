@@ -11,6 +11,8 @@ var {
   Component
 } = React;
 
+var PropertyView = require('./PropertyView');
+
 class SearchResults extends Component {
   constructor (props) {
     super(props);
@@ -23,6 +25,12 @@ class SearchResults extends Component {
 
   rowPressed(propertyGuid) {
     var property = this.props.listings.filter((property) => property.guid = propertyGuid)[0];
+
+    this.props.navigator.push({
+      title: 'Property',
+      component: PropertyView,
+      passProps: {property: property}
+    })
   }
 
   renderRow(rowData, sectionID, rowID) {
@@ -32,7 +40,7 @@ class SearchResults extends Component {
     return (
       <TouchableHighlight
         underlayColor="#dddddd"
-        onPress={this.rowPressed(propertyGuid)}>
+        onPress={() => this.rowPressed(propertyGuid)}>
         <View>
           <View style={styles.rowContainer}>
             <Image style={styles.thumb} source={{ uri: rowData.img_url }} />
