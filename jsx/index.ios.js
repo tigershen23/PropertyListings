@@ -15,18 +15,6 @@ var {
   NavigatorIOS,
 } = React;
 
-class HelloWorld extends React.Component {
-  render() {
-    return (
-      <View>
-        <Text style={styles.text}>
-          Hello World!
-        </Text>
-      </View>
-    );
-  }
-}
-
 class PropertyListingsApp extends React.Component {
   render() {
     return (
